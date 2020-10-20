@@ -24,7 +24,7 @@ The hardware in the `qh-devel` partition includes:
  
 ## Access
 
-These nodes live in `arcus-htc-dev`, accessible from an internal ARC network `oscgate.arc.ox.ac.uk`. Access from outside of the Oxford University network may first require VPN to server `vpn.ox.ac.uk` (using `oxfordusername@ox.ac.uk`). 
+These nodes live in `arcus-htc-dev`, accessible from an gateway ARC network `oscgate.arc.ox.ac.uk`. Access from outside of the Oxford University network may first require VPN to server `vpn.ox.ac.uk` (using `oxfordusername@ox.ac.uk`). 
 
 Access using your regular ARC account `[USER]` by two tunnels:
 
@@ -118,5 +118,5 @@ The CPU nodes are available at `arcus-htc-node[201-245]`, and the GPU nodes at `
 ## Job Restrictions
 
 As of 19th Oct 2020:
-- There is  **no** `time` restriction.
-- All `45 + 8` nodes can be requested by a single job.
+- There is **no** `time` limit (despite the usual `htc-dev` restriction of 10mins).
+- There is **no** restriction on nodes. All `45 + 8` nodes can be requested by a single job.

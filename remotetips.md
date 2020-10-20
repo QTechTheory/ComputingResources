@@ -1,11 +1,25 @@
 Tips for Remote Sessions
 ========================
 
-- SSH without passphrase 
-- Mount remote drive
+* [SSH to a specific directory](#ssh-to-a-specific-directory)
+* [SSH without passphrase](#ssh-without-passphrase)
+* [Mount remote drive](#mount-remote-drive)
 
+## SSH to a specific directory
+> Linux and MacOS
 
-## [Linux / MacOS] SSH without passphrase
+To SSH directly into a target remote directory `[DIR]`, run:
+```
+ssh [USER]@[ADDRESS] "cd [DIR]; bash"
+```
+It is convenient to save this as a bash script to run each time when connecting. For example, I access [ARCUS-B](arcusB.md) via a script `~/arcusb_connect.sh` with contents:
+```
+ssh corp2627@arcus-b.arc.ox.ac.uk "cd /data/oums-quantopo/corp2627 ; bash"
+```
+which is previously given permission to run via `chmod +x arcusb_connect.sh`
+
+## SSH without passphrase
+> Linux and MacOS
 
 Punching in your password every time you SSH to the same machine can be a chore. We *have* RSA keys, let's use them! Here we'll setup passphrase-free SSH. This is sometimes necessary for running Mathematica kernels on remote machines, like [Victor](victor.md) and [Fritz](fritz).
 
@@ -39,7 +53,8 @@ ssh USER@ADDRESS
 ```
 
 
-## [MacOS] Mount remote drive
+## Mount remote drive
+> MacOS
 
 Copying files back and forth with a remote machine can be a pain. *Mounting* the remote drive will make it appear as a regular directory on your client machine, so you can edit remote files in software as if they were local.
 

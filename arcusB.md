@@ -73,11 +73,19 @@ Below are details specific to ARCUS-B.
  ```
  #SBATCH --mem=200GB
  ```
+ You can check the RAM size of a node during job runtime within the submission script using:
+ ```
+ free -m > memorysize.txt
+ ```
  
 - The higher core-count (20 core Broadwell) nodes can be requested using `ntasks-per-node`, and removing the `reservation` flag.
  ```
  ## SBATCH --reservation=nqit
  #SBATCH --ntasks-per-node=20
+ ```
+ You can check the number of nodes of a node during job runtime within the submission script using:
+ ```
+ lscpu > cpuinfo.txt
  ```
 
 ## Job Restrictions

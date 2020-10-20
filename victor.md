@@ -19,3 +19,16 @@ Victor is a desktop machine (Dell Precision 5820) in the Materials office 40.10.
 ## Access
 - SSH to `victorslab.materials.ox.ac.uk` (IP `129.67.87.96`). This may require being in the materials network, either on-site ethernet, or via VPN server `vpn.ox.ac.uk` (using `oxfordusername@ox.ac.uk`)
 - Physically in office 40.10
+
+## Job Submission 
+
+Victor does *not* use a job scheduler. Instead, users should manually check the current load on the system before launching their jobs. 
+
+Check the CPU load with 
+```
+htop
+```
+and the GPU load with
+```
+nvidia-smi 
+```

@@ -2,7 +2,6 @@
 Fritz
 ======
 
-
 Fritz is a desktop machine (Dell Precision 5820) in the Materials office 40.04.
 
 ## Hardware
@@ -21,3 +20,16 @@ Fritz is a desktop machine (Dell Precision 5820) in the Materials office 40.04.
 ## Access
 - SSH to `fritzlab.materials.ox.ac.uk` (IP `129.67.85.63`). This may require being in the materials network, either on-site ethernet, or via VPN server `vpn.ox.ac.uk` (using `oxfordusername@ox.ac.uk`)
 - Physically in office 40.04
+
+## Job Submission 
+
+Fritz does *not* use a job scheduler. Instead, users should manually check the current load on the system before launching their jobs. 
+
+Check the CPU load with 
+```
+htop
+```
+and the GPU load with
+```
+nvidia-smi 
+```

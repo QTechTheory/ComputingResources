@@ -17,6 +17,8 @@ Both [ARCUS-B](arcusB.md) and [ARCUS-HTC](arcusHTC.md) use [SLURM](https://slurm
   * [Requeuing and delaying jobs](#requeuing-and-delaying-jobs)
   
 
+Jobs are submitted via a submission script. These consist of a bunch of `#SBATCH` commands interpreted by SLURM which specify *where* and *how* to run the proceeding bash script.  
+
 ## Submitting a serial job
 
 Assuming `my_executable` is a precompiled serial program, here's a template of a SLURM submit script to run for 1 hour on a single node in the `nqit` partition (accessible as a member of Simon Benjamin's `oums-quantopo` group), and email `myemail@dom.com` when the job starts and finishes.
