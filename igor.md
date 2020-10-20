@@ -23,11 +23,11 @@ Igor is a Macbook Pro (15 inch, 2016) with a connected external GPU in the Mater
 Igor does *not* use a job scheduler. Instead, users should manually check the current load on the system before launching their jobs. 
 
 Check the CPU load with 
-```
+```bash
 htop
 ```
 and the GPU load with
-```
+```bash
 nvidia-smi 
 ```
 

@@ -14,11 +14,11 @@ Big Chungus lives in `arcus-htc`, accessible from an gateway ARC network `oscgat
 
 Access using your regular ARC account `[USER]` by two tunnels:
 
-```
+```bash
 ssh [USER]@oscgate.arc.ox.ac.uk
 ```
 then
-```
+```bash
 ssh [USER]@arcus-htc
 ```
 
@@ -28,11 +28,11 @@ This is the level from which jobs should be submitted.
 
 Big Chungus can also be SSH'd into directly, though this should be avoided in general, and done only if the node has first been reserved via SLURM. 
 Check if Big Chungus is in use via:
-```
+```bash
 eh
 ```
 After submitting a job (see below), SSH directly into Big Chungus (from within `arcus-htc`) via:
-```
+```bash
 cnode4101 ??
 ```
 

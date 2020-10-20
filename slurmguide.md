@@ -6,8 +6,8 @@ Both [ARCUS-B](arcusB.md) and [ARCUS-HTC](arcusHTC.md) use [SLURM](https://slurm
   * [Submitting a serial job](#submitting-a-serial-job)
   * [Submitting a multithreaded job](#submitting-a-multithreaded-job)
   * [Submitting a distributed job](#submitting-a-distributed-job)
-  * [Submitting multiple serial jobs (one node)](#submitting-multiple-serial-jobs--one-node-)
-  * [Submitting *many* serial jobs (many nodes)](#submitting--many--serial-jobs--many-nodes-)
+  * [Submitting multiple serial jobs (one node)](#submitting-multiple-serial-jobs-\(one-node\))
+  * [Submitting *many* serial jobs (many nodes)](#submitting--many--serial-jobs-\(many-nodes\))
   * [Submitting multiple multithreaded jobs](#submitting-multiple-multithreaded-jobs)
   * [Submitting multiple distributed & multithreaded jobs](#submitting-multiple-distributed---multithreaded-jobs)
   * [Sweeping parameters between multiple jobs](#sweeping-parameters-between-multiple-jobs)
@@ -39,9 +39,9 @@ Save this as `submit.sh`, and submit the job to the queue via `sbatch submit.sh`
 > **NOTE**:
 > - **ARCUS-B** will dedicate an entire node to the job, even though the number of cores `ntasks-per-node` wasn't specified.
 > - **ARCUS-HTC** and **ARCUS-HTC-Dev** will dedicate only a single core (meaning multiple jobs may run on a single node), unless one specifies `ntasks-per-node` or reserves the entire node with:
-> ```
-> #SBATCH --exclusive
-> ```
+>   ```
+>   #SBATCH --exclusive
+>   ```
 
 
 ## Submitting a multithreaded job
@@ -190,36 +190,37 @@ It's often tricky to map SLURM jobs to unique assignments of command-line argume
 ## Checking the status of jobs
 
 - To see the status of your running or in-queue jobs, use
-```
-squeue -u [username]
-```
-where `[username]` is e.g. `wolf5549`. 
+  ```
+  squeue -u [username]
+  ```
+  where `[username]` is e.g. `wolf5549`. 
 
 - You can see your running and recently finished jobs with (no arguments needed):
-```
-sacct
-```
+  ```
+  sacct
+  ```
 
 - To see jobs running on the `nqit` reservation, use
-```
-squeue --reservation nqit
-```
+  ```
+  squeue --reservation nqit
+  ```
 
 - To see only jobs that are in queue for the `nqit` reservation, use
-```
-squeue --reservation nqit --start
-```
+  ```
+  squeue --reservation nqit --start
+  ```
 
 ## Cancelling a job
+
 - To cancel a job, use
-```
-scancel [JOB ID]
-```
+  ```
+  scancel [JOB ID]
+  ```
 
 - Cancel all your jobs with 
-```
-scancel -u [NAME]
-```
+  ```
+  scancel -u [NAME]
+  ```
 
 ## Delaying enqueued jobs
 
@@ -228,60 +229,59 @@ scancel -u [NAME]
 These commands are useful for managing the load on the cluster, by delaying your enqueued jobs to let other jobs run first.
 
 - To delay an enqueued job with id `[JOB ID]` (learn via `squeue`) for (e.g.) `7` days:
-```
-scontrol update JobID=[JOB ID] StartTime=now+7days
-```
-The `NODELIST(REASON)` field reported by `squeue` will change to `(BeginTime)`.
-> This will have no effect on a job that's already running.
+  ```bash
+  scontrol update JobID=[JOB ID] StartTime=now+7days
+  ```
+  The `NODELIST(REASON)` field reported by `squeue` will change to `(BeginTime)`.
+  > This will have no effect on a job that's already running.
 
 - To delay **multiple** enqueued jobs by (e.g.) `7` days, 
-```
-for jobid in [SPACE SEPARATED LIST OF JOB IDS]; scontrol update JobID=$jobid StartTime=now+7days; done
-```
-where `[SPACE SEPARATED LIST OF JOB IDS]` is what it says on the tin.
-> For example, if my enqueued jobs have IDs:
-> ```
-> 1234567
-> 1234568
-> 1234569
-> ```
-> then my command to delay them a day is
-> ```
-> for jobid in 1234567 1234568 1234569; scontrol update JobID=$jobid StartTime=now+1days; done
-> ```
-
-See the proceeding section for an example of a command to delay multiple jobs which share a common prefix.
+  ```bash
+  for jobid in [SPACE SEPARATED LIST OF JOB IDS]; scontrol update JobID=$jobid StartTime=now+7days; done
+  ```
+  where `[SPACE SEPARATED LIST OF JOB IDS]` is what it says on the tin.
+  > For example, if my enqueued jobs have IDs:
+  > ```
+  > 1234567
+  > 1234568
+  > 1234569
+  > ```
+  > then my command to delay them a day is
+  > ```
+  > for jobid in 1234567 1234568 1234569; scontrol update JobID=$jobid StartTime=now+1days; done
+  > ```
+  See the proceeding section for an example of a command to delay multiple jobs which share a common prefix.
 
 ## Requeuing and delaying jobs
 
 These commands are useful for managing the load on the cluster, by stopping your currently running jobs and requeueing them later, to let other jobs run first.
 
 - To kill a running job and requeue it with a delay (e.g. for `1` day):
-```
-(export jobid=[JOB ID]; scontrol requeue $jobid; scontrol update JobID=$jobid StartTime=now+1day)
-```
-Sometimes these requeued jobs do *not* appear in `squeue`, but rest assured that they're still enqueud!
-> It's important these `requeue` and `update` commands are done in this single cmd command, since otherwise the job may rerun immediately before the delay is applied
+  ```bash
+  (export jobid=[JOB ID]; scontrol requeue $jobid; scontrol update JobID=$jobid StartTime=now+1day)
+  ```
+  Sometimes these requeued jobs do *not* appear in `squeue`, but rest assured that they're still enqueud!
+  > It's important these `requeue` and `update` commands are done in this single cmd command, since otherwise the job may rerun immediately before the delay is applied
 
 - To kill and requeue (with delay e.g. `1` day) **multiple** running jobs:
-```
-for jobid in [SPACE SEPARATED LIST OF JOB IDS]; do scontrol requeue $jobid; scontrol update JobID=$jobid StartTime=now+1day; done
-```
+  ```bash
+  for jobid in [SPACE SEPARATED LIST OF JOB IDS]; do scontrol requeue $jobid; scontrol update JobID=$jobid StartTime=now+1day; done
+  ```
 
 - Often many jobs share a common prefix, like those submitted using SLURM `array`. To avoid retyping this prefix, we can save it with `export`.
-Here's how to kill and requeue (with delay e.g. `1` day) multiple running jobs which share a common prefix:
-```
-(export prefix=[COMMON JOB ID PREFIX]; for suffix in [SPACE SEPARATED LIST OF JOB ID SUFFIXES]; do scontrol requeue ${prefix}${suffix}; scontrol update JobID=${prefix}${suffix} StartTime=now+1day; done)
-```
-> For example, if the current running jobs have IDs
-> ```
-> 1234567_10
-> 1234567_11
-> 1234567_12
-> 1234567_13
-> 1234567_14
-> ```
-> then they can be killed and requeued (with a `1` day delay) via:
-> ```
-> (export prefix=1234567_1; for suffix in 0 1 2 3 4; do scontrol requeue ${prefix}${suffix}; scontrol update JobID=${prefix}${suffix} StartTime=now+1day; done)
-> ```
+  Here's how to kill and requeue (with delay e.g. `1` day) multiple running jobs which share a common prefix:
+  ```bash
+  (export prefix=[COMMON JOB ID PREFIX]; for suffix in [SPACE SEPARATED LIST OF JOB ID SUFFIXES]; do scontrol requeue ${prefix}${suffix}; scontrol update JobID=${prefix}${suffix} StartTime=now+1day; done)
+  ```
+  > For example, if the current running jobs have IDs
+  > ```bash
+  > 1234567_10
+  > 1234567_11
+  > 1234567_12
+  > 1234567_13
+  > 1234567_14
+  > ```
+  > then they can be killed and requeued (with a `1` day delay) via:
+  > ```bash
+  > (export prefix=1234567_1; for suffix in 0 1 2 3 4; do scontrol requeue ${prefix}${suffix}; scontrol update JobID=${prefix}${suffix} StartTime=now+1day; done)
+  > ```

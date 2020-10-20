@@ -8,28 +8,28 @@ The `oums-quantopo` group (lead by Simon Benjamin) has privileged access to the 
 The `nqit` reservation includes `112` of the nodes listed [here](https://www.arc.ox.ac.uk/arc-systems). These include:
 
 - 246 **CPU nodes** with:
- * 16 core CPU (Intel Haswell, 1.2GHz, 20MB cache)
- * 64GB RAM
+  * 16 core CPU (Intel Haswell, 1.2GHz, 20MB cache)
+  * 64GB RAM
  
 - 92 **CPU nodes** with:
- * 16 core CPU (Intel Haswell, 1.2GHz, 20MB cache)
- * 128GB RAM
+  * 16 core CPU (Intel Haswell, 1.2GHz, 20MB cache)
+  * 128GB RAM
 
 - 9 **CPU nodes** with:
- * 16 core CPU (Intel Haswell, 1.2GHz, 20MB cache)
- * 256GB RAM
+  * 16 core CPU (Intel Haswell, 1.2GHz, 20MB cache)
+  * 256GB RAM
 
 
 > ARCUS-B includes the following nodes *outside* the `nqit` reservation. 
 > These might no longer be exempt from billing.
 >
 > - 33 **CPU nodes** with:
->  * 20 core (40 threads) CPU (Intel Broadwell, 1.2GHz, 26MB cache)
->  * 128GB RAM
+>   * 20 core (40 threads) CPU (Intel Broadwell, 1.2GHz, 26MB cache)
+>   * 128GB RAM
 > 
 > - 3 **CPU nodes** with:
->  * 20 core  (40 threads) CPU (Intel Broadwell, 1.2GHz, 26MB cache)
->  * 256GB RAM
+>   * 20 core  (40 threads) CPU (Intel Broadwell, 1.2GHz, 26MB cache)
+>   * 256GB RAM
 
 ## Access
 
@@ -37,7 +37,7 @@ These nodes live in `arcus-b.arc.ox.ac.uk`. Access from outside of the Oxford Un
 
 Access using your regular ARC account `[USER]`:
 
-```
+```bash
 ssh [USER]@@arcus-b.arc.ox.ac.uk
 ```
 
@@ -48,45 +48,45 @@ See [here](slurmguide.md) for a general guide on submitting and parallelising jo
 Below are details specific to ARCUS-B.
 
 - All submission scripts to ARCUS-B should include:
- ```
- #SBATCH --account=oums-quantopo
- #SBATCH --reservation=nqit
- ```
- Here's an example of a `1` hour job running on a single `64GB` node (reserving all `16` cores):
- ```
- #!/bin/bash
- #SBATCH --account=oums-quantopo
- #SBATCH --reservation=nqit
-
- #SBATCH --job-name=myjob
- #SBATCH --time=1:00:00
- #SBATCH --nodes=1
-
- ./my_application
- ```
+  ```bash
+  #SBATCH --account=oums-quantopo
+  #SBATCH --reservation=nqit
+  ```
+  Here's an example of a `1` hour job running on a single `64GB` node (reserving all `16` cores):
+  ```bash
+  #!/bin/bash
+  #SBATCH --account=oums-quantopo
+  #SBATCH --reservation=nqit
+  
+  #SBATCH --job-name=myjob
+  #SBATCH --time=1:00:00
+  #SBATCH --nodes=1
+  
+  ./my_application
+  ```
 
 - The larger RAM nodes can be requested by specifying `mem`, though one must be careful to specify an amount *less* than that of the node. To request `128GB`, use:
- ```
- #SBATCH --mem=100GB
- ```
- To request `256GB`, use
- ```
- #SBATCH --mem=200GB
- ```
- You can check the RAM size of a node during job runtime within the submission script using:
- ```
- free -m > memorysize.txt
- ```
+  ```bash
+  #SBATCH --mem=100GB
+  ```
+  To request `256GB`, use
+  ```bash
+  #SBATCH --mem=200GB
+  ```
+  You can check the RAM size of a node during job runtime within the submission script using:
+  ```bash
+  free -m > memorysize.txt
+  ```
  
 - The higher core-count (20 core Broadwell) nodes can be requested using `ntasks-per-node`, and removing the `reservation` flag.
- ```
- ## SBATCH --reservation=nqit
- #SBATCH --ntasks-per-node=20
- ```
- You can check the number of nodes of a node during job runtime within the submission script using:
- ```
- lscpu > cpuinfo.txt
- ```
+  ```bash
+  ## SBATCH --reservation=nqit
+  #SBATCH --ntasks-per-node=20
+  ```
+  You can check the number of nodes of a node during job runtime within the submission script using:
+  ```bash
+  lscpu > cpuinfo.txt
+  ```
 
 ## Job Restrictions
 

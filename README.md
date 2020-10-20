@@ -19,13 +19,13 @@ While these desktops can be accessed directly, they are particularly convenient 
 ## Links
 In total, this repo contains:
 - [[link](arc.md)] Info about ARC, and the group's privileged access to:
- - [ARCUS-B](arcusB.md)
- - [ARCUS-HTC Dev](arcusHTCdev.md)
- - [Big Chungus](bigchungus.md)
+  - [ARCUS-B](arcusB.md)
+  - [ARCUS-HTC Dev](arcusHTCdev.md)
+  - [Big Chungus](bigchungus.md)
 - [[link](slurmguide.md)] A guide on using ARC's Job Scheduler, SLURM.
 - [[link](remotetips.md)] Tips for accessing these facilities remotely
 - Info about the office workstations:
- - [Victor](victor.md)
- - [Fritz](fritz.md)
- - [Igor](igor.md)
+  - [Victor](victor.md)
+  - [Fritz](fritz.md)
+  - [Igor](igor.md)
 - [[link](remotemmakernel.md)] A guide for using these workstations as remote Mathematica kernels.
