@@ -34,3 +34,4 @@ nvidia-smi
 ## Notes
 - Igor's MacOS should never be upgraded from High Sierra since later OS are incompatible with NVIDIA GPU drivers.
 - Igor's eGPU is occasionally borrowed for connection to other machines. Check whether it's currently connected with `nvidia-smi`.
+- Igor's eGPU was installed by following [this guide](https://gist.github.com/TysonRayJones/29a1f3a4f773dbe3aaae36a65343830b).
