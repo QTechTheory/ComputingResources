@@ -28,7 +28,7 @@ Assuming Mathematica is already installed on a workstation (via [this guide](wor
     - The **Launch Command** depends on whether the workstations is running Linux (like [Victor](victor.md) and [Fritz](fritz.md)) or MacOS ([Igor](igor.md)), and where the Wolfram files are located. Replace `[NAME]` with your credentials in the Launch Commands below:
        - **Victor**:
          ```bash
-         ssh [NAME]@victorslab.materials.ox.ac.uk '/home/Wolfram/Mathematica/11.3/SystemFiles/Kernel/Binaries/Linux-x86-64/WolframKernel -wstp -LinkMode Connect -LinkProtocol TCPIP -LinkName "`linkname`"'
+         ssh [NAME]@victorslab.materials.ox.ac.uk 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/Wolfram/Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/;/home/Wolfram/Mathematica/11.3/SystemFiles/Kernel/Binaries/Linux-x86-64/WolframKernel -wstp -LinkMode Connect -LinkProtocol TCPIP -LinkName "`linkname`"'
          ```
        - **Fritz**:
          ```bash
