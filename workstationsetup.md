@@ -109,7 +109,18 @@ When prompted for an Activation Key, select `Other ways to activate` then `Conne
 ouit-mathlic.it.ox.ac.uk
 ```
 
-This will install Mathematica both as a desktop application, and as a command-line utility and kernel accessible by all user accounts.
+This will install Mathematica both as a desktop application, and as a command-line utility and kernel, but *will not yet* be accessible by all user accounts.
+To make it accessible at the cmd-line to all users, run:
+- Victor and Fritz:
+  ```bash
+  sudo mkdir /usr/share/Mathematica/Licensing
+  echo '!ouit-mathlic.it.ox.ac.uk' | sudo tee -a /usr/share/Mathematica/Licensing/mathpass
+  ```
+- Igor:
+  ```bash
+  sudo mkdir /Library/Mathematica/Licensing
+  echo '!ouit-mathlic.it.ox.ac.uk' | sudo tee -a /Library/Mathematica/Licensing/mathpass
+  ```
 
 Executing code asynch can be done via the `wolframscript` alias, which points to:
 - **Victor**:
