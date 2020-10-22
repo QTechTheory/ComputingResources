@@ -31,7 +31,7 @@ In total, this repo contains:
   - [Fritz](fritz.md)
   - [Igor](igor.md)
 - [[link](remotemmakernel.md)] A guide for using these workstations as remote Mathematica kernels.
-- [[link](workstationsetup.md)] A guide for Simon or another admin to create new user accounts on the office workstations.
+- [[link](workstationsetup.md)] A guide for Simon or another admin to create new user accounts on the office workstations, and setup the compiler and questlink environments.
 
 We link also to external resources:
 - [[link](https://github.com/TysonRayJones/PythonTools/tree/master/slurm_param_sweeper)] A tool for generating SLURM scripts which sweep parameters

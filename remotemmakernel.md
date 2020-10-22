@@ -54,7 +54,9 @@ UsingFrontEnd[]
 
 If the workstation has been setup correctly (via [this guide](workstationsetup.md)), it will contain pre-prepared [QuESTlink](https://github.com/QTechTheory/QuESTLink) environments, for both serial, multithreaded and GPU-accelerated modes. To use them in your remote-kernel notebook, run:
 ```Mathematica
-Import["https://quest.qtechtheory.org/QuEST.m"]
+Import["/questlink/link.m"]
 CreateLocalQuESTEnv["/questlink/serial"];
 ```
 replacing `serial` with `multi` or `gpu` for multithreaded and GPU-accelerated modes respectively.
+
+> As of 22 Oct 2020, Victor, Fritz and Igor are all prepared with QuESTlink v0.5 (released 20 May 2020). 

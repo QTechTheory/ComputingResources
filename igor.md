@@ -11,7 +11,18 @@ Igor is a Macbook Pro (15 inch, 2016) with a connected external GPU in the Mater
 
 ## Software
 - macOS High Sierra (v10.13.6)
-- Mathematica via network license server `ouit-mathlic.it.ox.ac.uk`
+- Mathematica **12.0** via network license server 
+  ```bash 
+  ouit-mathlic.it.ox.ac.uk
+  ```
+  The `wolframscript` command is located at 
+  ```bash
+  /usr/local/bin/wolframscript
+  ```
+  and the kernel is at 
+  ```bash
+  /Applications/Mathematica.app/Contents/MacOS/WolframKernel
+  ```
 
 ## Access
 - SSH to `igorslab.local` from the materials ethernet network.

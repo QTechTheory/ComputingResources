@@ -15,7 +15,18 @@ Fritz is a desktop machine (Dell Precision 5820) in the Materials office 40.04.
 ## Software
 - Ubuntu 20
 - Windows 10 (via swappable boot drive)
-- Mathematica via network license server `ouit-mathlic.it.ox.ac.uk`
+- Mathematica **12.1** via network license server 
+  ```bash 
+  ouit-mathlic.it.ox.ac.uk
+  ```
+  The `wolframscript` command is located at 
+  ```bash
+  /usr/bin/wolframscript
+  ```
+  and the kernel is at 
+  ```bash
+  /usr/local/Wolfram/Mathematica/12.1/SystemFiles/Kernel/Binaries/Linux-x86-64/WolframKernel
+  ```
 
 ## Access
 - SSH to `fritzlab.materials.ox.ac.uk` (IP `129.67.85.63`). This may require being in the materials network, either on-site ethernet, or via VPN server `vpn.ox.ac.uk` (using `oxfordusername@ox.ac.uk`)
