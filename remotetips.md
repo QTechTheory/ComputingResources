@@ -21,6 +21,8 @@ which is previously given permission to run via `chmod +x arcusb_connect.sh`
 ## SSH without passphrase
 > Linux and MacOS
 
+> These instructions currently do NOT apply to Igor.
+
 Punching in your password every time you SSH to the same machine can be a chore. We *have* RSA keys, let's use them! Here we'll setup passphrase-free SSH. This is sometimes necessary for running Mathematica kernels on remote machines, like [Victor](victor.md) and [Fritz](fritz).
 
 > All the below commands are to be entered in your **local** machine's terminal, unless specified otherwise.
