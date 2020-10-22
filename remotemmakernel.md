@@ -1,8 +1,6 @@
 Remote Mathematica Kernels 
 ==========================
 
-> The below method for setting up remote kernels does *not* seem compatible with the new user account created via [this guide](workstationsetup.md). Please tune back later!
-
 The [Victor](victor.md), [Fritz](fritz.md) and [Igor](igor.md) workstations can run long asynchronous Mathematica scripts `[file]` (`.m` or `.wls`) from the command line:
 ```
 wolframscript -file [file.m]
