@@ -23,7 +23,7 @@ which is previously given permission to run via `chmod +x arcusb_connect.sh`
 
 Punching in your password every time you SSH to the same machine can be a chore. We *have* RSA keys, let's use them! Here we'll setup passphrase-free SSH. This is sometimes necessary for running Mathematica kernels on remote machines, like [Victor](victor.md) and [Fritz](fritz).
 
-> All the below commands are to be entered in your **local** machine's terminal.
+> All the below commands are to be entered in your **local** machine's terminal, unless specified otherwise.
 
 1. Ensure you have an RSA key:
     ```bash
@@ -33,8 +33,17 @@ Punching in your password every time you SSH to the same machine can be a chore.
  
 2. Add your key to the remote machine (`USER@ADDRESS`):
     ```bash
-    cat ~/.ssh/id_rsa.pub | ssh USER@ADDRESS 'cat >> .ssh/authorized_keys'
+    cat ~/.ssh/id_rsa.pub | ssh USER@ADDRESS 'cat >> ~/.ssh/authorized_keys'
     ```
+    > If this fails, reporting "directory nonexistent", then first SSH into the remote machine:
+    > ```bash
+    > ssh USER@ADDRESS
+    > ```
+    > then on the remote machine, run:
+    > ```bash
+    > mkdir ~/.ssh; chmod 700 ~/.ssh; touch ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys
+    > 
+    > ```
 
 3. Add the key to the SSH agent:
     ```bash
