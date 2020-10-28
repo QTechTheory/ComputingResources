@@ -26,7 +26,7 @@ Setting up the office workstations
 
 4. Run the following command to create each user as **sudo** with the same default password as above:
     ```bash
-    for USER in ${NEWUSERS[*]}; do sudo useradd -m $USER; sudo usermod -aG sudo $USER; sudo usermod --password $(openssl passwd -1 $DEFAULT) $USER; done
+    for USER in ${NEWUSERS[*]}; do sudo useradd -m $USER; sudo usermod -aG sudo $USER; sudo usermod --password $(openssl passwd -1 $DEFAULT) $USER; sudo usermod -s /bin/bash $USER; done
     ```
     This will prompt you to enter the root password for the `victor` and `fritz` accounts.
     
@@ -42,6 +42,9 @@ Setting up the office workstations
         
         # set the user's password to $DEFAULT
         sudo usermod --password $(openssl passwd -1 $DEFAULT) $USER
+        
+        # set the user's login shell to bash
+        sudo usermod -s /bin/bash username
     done
     ```
 

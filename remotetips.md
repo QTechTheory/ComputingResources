@@ -21,6 +21,8 @@ which is previously given permission to run via `chmod +x arcusb_connect.sh`
 ## SSH without passphrase
 > Linux and MacOS
 
+> Do **not** use passphraseless SSH on the [ARC](arc.md) facilities, to avoid fiascos like [this](https://www.theregister.com/2020/05/13/uk_archer_supercomputer_cyberattack/). Please only use the below guide for access to the office workstations, as required for [remote Mathematica kernels](remotemmakernel.md).
+
 > These instructions currently do NOT apply to Igor.
 
 Punching in your password every time you SSH to the same machine can be a chore. We *have* RSA keys, let's use them! Here we'll setup passphrase-free SSH. This is sometimes necessary for running Mathematica kernels on remote machines, like [Victor](victor.md) and [Fritz](fritz).
