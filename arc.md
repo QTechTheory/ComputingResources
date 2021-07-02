@@ -2,13 +2,13 @@ ARC Supercomputers
 ==================
 
 [Advanced Research Computing](https://www.arc.ox.ac.uk/) (ARC) is an Oxford-wide HPC facility.
-It is divided into `ARCUS-B` and `ARCUS-HTC` clusters, with additional facilities in a developmental `ARCUS-HTC Dev` cluster. All systems run Linux.
+It is divided into `ARCUS-B`, `ARCUS-C` and `ARCUS-HTC` clusters. All systems run Linux.
 All researchers of Oxford University have access to the hardware listed [here](https://www.arc.ox.ac.uk/arc-systems), via a credit system.
 
 Members of Simon Benjamin's QTechTheory can make use of privileged access (credit-free) of the following hardware:
 
 - [[info](arcusB.md)] CPU nodes on `ARCUS-B`
-- [[info](arcusHTCdev.md)] CPU and GPU nodes on `ARCUS-HTC-Dev`
+- [[info](arcusC.md)] CPU and GPU nodes on `ARCUS-C`
 - [[info](bigchungus.md)] "Big Chungus" - a 6TB CPU node on `ARCUS-HTC`.
 
 ## Access

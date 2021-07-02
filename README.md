@@ -22,7 +22,7 @@ While these desktops can be accessed directly, they are particularly convenient 
 In total, this repo contains:
 - [[link](arc.md)] Info about ARC, and the group's privileged access to:
   - [ARCUS-B](arcusB.md)
-  - [ARCUS-HTC Dev](arcusHTCdev.md)
+  - [ARCUS-C](arcusC.md)
   - [Big Chungus](bigchungus.md)
 - [[link](slurmguide.md)] A guide on using ARC's Job Scheduler, SLURM.
 - [[link](remotetips.md)] Tips for accessing these facilities remotely

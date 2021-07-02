@@ -38,7 +38,7 @@ Save this as `submit.sh`, and submit the job to the queue via `sbatch submit.sh`
 
 > **NOTE**:
 > - **ARCUS-B** will dedicate an entire node to the job, even though the number of cores `ntasks-per-node` wasn't specified.
-> - **ARCUS-HTC** and **ARCUS-HTC-Dev** will dedicate only a single core (meaning multiple jobs may run on a single node), unless one specifies `ntasks-per-node` or reserves the entire node with:
+> - **ARCUS-HTC** and **ARCUS-C** will dedicate only a single core (meaning multiple jobs may run on a single node), unless one specifies `ntasks-per-node` or reserves the entire node with:
 >   ```
 >   #SBATCH --exclusive
 >   ```

@@ -40,7 +40,7 @@ This is the level from which jobs should be submitted.
 
 ## Job Submission
 
-From `arc-login`, one can submit [SLURM](https://slurm.schedmd.com/documentation.html) jobs to the CPU or GPU nodes. See [here](slurmguide.md) for a general guide on submitting and parallelising jobs. Below describes only the specifics to ARCUS-HTC-Dev.
+From `arc-login`, one can submit [SLURM](https://slurm.schedmd.com/documentation.html) jobs to the CPU or GPU nodes. See [here](slurmguide.md) for a general guide on submitting and parallelising jobs. Below describes only the specifics to ARCUS-C.
 
 `arc-login` can be used to submit jobs both to `arcus-htc` and to `arc-c`, so it is important to specify from within the submit script that you want the job to run on the new nodes, otherwise the scheduler may change the location depending on availability. The flags below should always be present to ensure that the job is run on the new nodes, with no time restrictions:
 
