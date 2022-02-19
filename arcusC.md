@@ -50,7 +50,7 @@ From `arc-login`, one can submit [SLURM](https://slurm.schedmd.com/documentation
   #SBATCH --account=oums-quantopo
   #SBATCH --partition=short
   #SBATCH --constraint=cpu_gen:Cascade_Lake
-  #SBATCH --constraint=cpu_sku:Platinum_86
+  #SBATCH --constraint=cpu_sku:Platinum_8628
   #SBATCH --clusters=arc 
   ```
 
@@ -65,7 +65,7 @@ From `arc-login`, one can submit [SLURM](https://slurm.schedmd.com/documentation
   #SBATCH --account=oums-quantopo
   #SBATCH --partition=short
   #SBATCH --constraint=cpu_gen:Cascade_Lake
-  #SBATCH --constraint=cpu_sku:Platinum_86
+  #SBATCH --constraint=cpu_sku:Platinum_8628
   #SBATCH --clusters=arc 
    
   #SBATCH --nodes=1
@@ -96,7 +96,7 @@ From `arc-login`, one can submit [SLURM](https://slurm.schedmd.com/documentation
   #SBATCH --account=oums-quantopo
   #SBATCH --partition=short
   #SBATCH --constraint=cpu_gen:Cascade_Lake
-  #SBATCH --constraint=cpu_sku:Platinum_86
+  #SBATCH --constraint=cpu_sku:Platinum_8628
   #SBATCH --clusters=arc 
    
   #SBATCH --nodes=1
@@ -178,7 +178,7 @@ For a job that is to run for 1 hour on a single core of a single node:
   #SBATCH --account=oums-quantopo
   #SBATCH --partition=short
   #SBATCH --constraint=cpu_gen:Cascade_Lake
-  #SBATCH --constraint=cpu_sku:Platinum_86
+  #SBATCH --constraint=cpu_sku:Platinum_8628
   #SBATCH --clusters=arc 
    
   #SBATCH --nodes=1
@@ -195,7 +195,7 @@ For a job that is to run with a limit of 24 hours, using 48 threads on each of 8
   #SBATCH --account=oums-quantopo
   #SBATCH --partition=short
   #SBATCH --constraint=cpu_gen:Cascade_Lake
-  #SBATCH --constraint=cpu_sku:Platinum_86
+  #SBATCH --constraint=cpu_sku:Platinum_8628
   #SBATCH --clusters=arc 
    
   #SBATCH --nodes=8
