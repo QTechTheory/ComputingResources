@@ -29,7 +29,7 @@ These nodes live in `arc-c`, accessible from gateway ARC network `oscgate.arc.ox
 Access using your regular ARC account `[USER]` by two tunnels:
 
 ```bash
-ssh [USER]@oscgate.arc.ox.ac.uk
+ssh [USER]@gateway.arc.ox.ac.uk
 ```
 then
 ```bash
@@ -167,6 +167,14 @@ In the submission script, the appropriate MPI module should also be loaded using
  ```bash
  mpirun -np <numNodes> my_executable
  ```
+ 
+## View load
+
+View the jobs running and waiting for these specific nodes with
+
+```bash
+squeue --nodelist=arc-c[001-045]
+```
 
 ## Example Scripts
  
