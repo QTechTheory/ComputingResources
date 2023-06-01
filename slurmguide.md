@@ -103,6 +103,8 @@ export OMP_NUM_THREADS=1
 for id in `seq 1 16`; do
     ./my_executable $id &
 done
+
+# don't forget to wait!!
 wait
 ```
 
@@ -114,6 +116,7 @@ One can "queue" as many serial jobs as desired, and GNU Parallel will manage run
 for id in `seq 1 100`; do
     ./my_executable $id &
 done
+
 wait
 ```
 
@@ -135,6 +138,9 @@ RUN_ID_LAST=$[ RUN_ID_FIRST + NUM_LOCAL - 1 ]
 for id in `seq $RUN_ID_FIRST $RUN_ID_LAST`; do
     ./my_executable $id &
 done
+
+# don't forget to wait!
+wait
 ```
 
 Each instance of `my_executable` will receive a unique command-line argument (a number `1` to `64`).
