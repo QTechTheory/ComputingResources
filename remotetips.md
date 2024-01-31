@@ -5,6 +5,15 @@ Tips for Remote Sessions
 * [SSH without passphrase](#ssh-without-passphrase)
 * [Mount remote drive](#mount-remote-drive)
 
+## SSH from outside Oxford
+
+The Oxford supercomputers and office machines cannot be directly accessed from outside the Oxford network, and wrangling with [VPNs](https://help.it.ox.ac.uk/remote-access-services) is often nightmarish. Thankfully, you can [register](https://register.it.ox.ac.uk/accman/shell) for the "[Linux service](https://help.it.ox.ac.uk/use-linux-service)" and from outside the Oxford network, ssh directly to
+```
+ssh [USER]@linux.ox.ac.uk
+```
+where `[USER]` is your [SSO](https://help.it.ox.ac.uk/oxford-username-and-sso) account name. 
+Once connected, your session will be inside the Oxford firewall, and you can subsequently SSH again into the office machines or the ARC supercomputers.
+
 ## SSH to a specific directory
 > Linux and MacOS
 
