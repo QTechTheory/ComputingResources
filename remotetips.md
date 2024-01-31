@@ -1,6 +1,7 @@
 Tips for Remote Sessions
 ========================
 
+* [SSH from outside Oxford](#ssh-from-outside-oxford)
 * [SSH to a specific directory](#ssh-to-a-specific-directory)
 * [SSH without passphrase](#ssh-without-passphrase)
 * [Mount remote drive](#mount-remote-drive)
